@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,57 +7,45 @@
     <meta name="description" content="emojiツール">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="blue">
-    <meta property="og:url" content="">
-    <meta property="og:type" content="article">
     <meta property="og:title" content="AARR emoji">
     <meta property="og:description" content="emojiツールです">
-    <meta property="og:site_name" content="荒らし連合軍">
     <meta property="og:image" content="https://i.imgur.com/JTkB9AC.png">
-
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 <body>
 <br>
     <h1>Discord emoji</h1>
-Note: 
-<br>
-カンマ","を使って区切る事で複数のemoji名と画像urlを指定出来ます
-<br>
-ただし絵文字名と画像urlの数と順番は同じにしてください
-<br>
-gifは現時点ではかなり不安定で追加出来ない場合もあります(修正予定)
-<br>
-テンプレートリンクを新しく作成するかリンクから読み取るボタンで絵文字を共有できます (tokenやサーバーIDは共有されません)
- <a href="https://github.com/NEKODESUDX/DM" target="_blank">group追加ツール</a>
-    <a href="https://discord.gg/DPmPdpcNqs" target="_blank">開発者サポートサーバー(discord)</a>
-    <a href="https://youtu.be/NTrzk7bxotg?si=Nd482zjloHVn6V4R" target="_blank">token取得方法(youtube)</a>
-    <form id="groupForm">
+    <p>
+        Note:<br>
+        カンマ "," を使って区切る事で複数の絵文字名と画像URLを指定出来ます。<br>
+        絵文字名と画像URLの数と順番を一致させてください。<br>
+        GIF画像は不安定で、追加できない場合もあります。<br>
+        テンプレートリンクを新しく作成するかリンクから読み取るボタンで絵文字を共有できます (tokenやサーバーIDは共有されません)。<br>
+    </p>
     <form id="emojiForm">
-        <label for="token">token:</label>
+        <label for="token">Token:</label>
         <input type="text" id="token" name="token" required>
         <br><br>
         <label for="guildId">サーバーID (Guild ID):</label>
         <input type="text" id="guildId" name="guildId" required>
         <br><br>
         <label for="emojiNames">絵文字名 (英数字/_):</label>
-        <input type="text" id="emojiNames" name="emojiNames" required>
+        <input type="text" id="emojiNames" name="emojiNames">
         <br>
         <label for="emojiUrls">絵文字URL (PNG/JPG/GIF):</label>
         <input type="text" id="emojiUrls" name="emojiUrls" required>
-        <br>
-        <button type="button" onclick="addEmojis()">絵文字を追加</button>
-        <br>
+        <br><br>
+        <button type="button" onclick="addEmojis()">絵文字を追加(1個/20秒)</button>
+        <button type="button" onclick="addEmojisWithoutNames()">名前指定なしで追加</button>
         <br>
     </form>
-<label for="shareLink">テンプレート共有リンク:</label>
-<input type="text" id="shareLink">
-<button type="button" onclick="copyShareLink()">コピー</button>
-<button type="button" onclick="generateShareLink()">絵文字共有(テンプレートリンクの作成)</button>
-<button type="button" onclick="readFromTemplateLink()">リンクから読み取る</button>
-<br>
-    <p id="status">ステータス: 準備完了</p>
+   <button type="button" onclick="copyShareLink()">コピー</button>
+    <label for="shareLink">テンプレート共有リンク:</label>
+    <input type="text" id="shareLink">
+    <button type="button" onclick="generateShareLink()">絵文字共有(テンプレートリンクの作成)</button>
+    <button type="button" onclick="readFromTemplateLink()">リンクから読み取る</button>
+    <br><br>
+    <div id="status">ステータス: 準備完了</div>
     <script src="script.js"></script>
 </body>
 </html>
