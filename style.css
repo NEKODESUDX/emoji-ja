@@ -1,7 +1,6 @@
-
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #2f3136; 
+    background-color: #1b1f3b; /* 濃い青色に変更 */
     color: #ffffff;
     margin: 0;
     padding: 20px;
@@ -47,7 +46,7 @@ input {
     padding: 14px 18px; 
     font-size: 16px; 
     color: #ffffff;
-    background-color: #40444b; 
+    background-color: rgba(64, 68, 75, 0.5); /* 半透明に変更 */
     border: 1px solid #2f3136;
     border-radius: 4px;
     outline: none;
@@ -60,7 +59,7 @@ input::placeholder {
 }
 
 input:focus {
-    background-color: #3c4047; 
+    background-color: rgba(60, 64, 71, 0.5); /* フォーカス時も半透明 */
     border: 1px solid #7289da; 
 }
 
@@ -130,16 +129,16 @@ button:hover {
     color: #ffffff;
 }
 
+a {
+    color: #7289da; 
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 0;
+    display: block;
+    transition: color 0.2s ease;
+}
 
-      a {
-            color: #7289da; 
-            text-decoration: none;
-            font-size: 16px;
-            margin: 10px 0;
-            display: block;
-            transition: color 0.2s ease;
-        }
-        a:hover {
-            color: #99aab5; 
-            text-decoration: underline;
-        }
+a:hover {
+    color: #99aab5; 
+    text-decoration: underline;
+}
